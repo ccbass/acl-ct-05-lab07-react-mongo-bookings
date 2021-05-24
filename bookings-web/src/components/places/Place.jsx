@@ -20,7 +20,7 @@ const Place = ({
     <div>
       <section>
         <h2>{name}</h2>
-        <Link to={`/${id}`} >Details</Link>
+        <Link to={`/getaways/${id}`} >Details</Link>
       </section>
       <ul>
         <li>{description}</li>
