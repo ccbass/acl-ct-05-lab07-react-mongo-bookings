@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
+
 
 const Place = ({
+  id,
   name,
   description,
   location,
@@ -14,18 +17,24 @@ const Place = ({
   wifi,
 }) => {
   return (
-    <ul>
-      <li>{name}</li>
-      <li>{description}</li>
-      <li>{location}</li>
-      <li>{pricePerNight}</li>
-      <li>{image}</li>
-      <li>{imageThumbnail}</li>
-      <li>{maxGuests}</li>
-      <li>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
-      {pool ? <li>Has a Pool!</li> : null}
-      {wifi ? <li>Free Wifi</li> : null}
-    </ul>
+    <div>
+      <section>
+        <h2>{name}</h2>
+        <Link to={`/${id}`} >Details</Link>
+      </section>
+      <ul>
+        <li>{description}</li>
+        <li>{location}</li>
+        <li>{pricePerNight}</li>
+        <li>{image}</li>
+        <li>{imageThumbnail}</li>
+        <li>{maxGuests}</li>
+        <li>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
+        {pool ? <li>Has a Pool!</li> : null}
+        {wifi ? <li>Free Wifi</li> : null}
+      </ul>
+
+    </div>
   );
 };
 
