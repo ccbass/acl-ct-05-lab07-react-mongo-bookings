@@ -27,7 +27,7 @@ module.exports = Router()
       res.cookie('session', token, {
         httpOnly: true,
         maxAge: ONE_DAY_IN_MS,
-        // sameSite: 'Lax' | 'None' | 'Strict',
+        sameSite: 'Lax',
         // secure: true
       });
 
