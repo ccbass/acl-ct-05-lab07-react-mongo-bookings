@@ -22,7 +22,7 @@ function Register() {
         e.preventDefault()
 
         if(userData.username && userData.email && userData.password){
-            
+
             const submission = await fetch(`${process.env.BASE_URL}/users/create`,
                 {
                   method: 'POST',
@@ -35,7 +35,7 @@ function Register() {
             const response = await submission.json()
     
             if(response){
-                currentHistory.push('/login')
+                currentHistory.push('/login', {fromRegistration: true})
             }
         }
     }

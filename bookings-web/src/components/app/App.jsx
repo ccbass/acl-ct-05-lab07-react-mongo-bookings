@@ -32,7 +32,6 @@ export default function App() {
         <Route path='/login' component={Login}/>
         <Route exact path='/getaways' component={Getaways}/>
         <Route path='/getaways/:id' component={GetawaysDetails}/>
-        <Route path='/test' component={Locked}/>
         <AuthRoute path='/testauth' component={Locked} authStatus={isAuthed}/>
       </Switch>
     </Router>
